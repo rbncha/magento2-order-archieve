@@ -1,4 +1,4 @@
-# Magento 2.2+ Archieve orders
+# Magento 2.2+. Magento 2.3+ Archieve orders
 Used in Admin / Backend > Sales Orders page
 
 This module can be used to archieve orders to make the orders list page cleaner with fewer new unprocessed orderes. Archieving means not deleting, it's archieving.
