@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magento\Framework\Console\CommandList">
+		<arguments>
+			<argument name="commands" xsi:type="array">
+				<item name="archieveorder" xsi:type="object">Rbncha\ArchieveOrder\Console\Command\ArchieveOrder</item>
+			</argument>
+		</arguments>
+	</type>
+
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+	    <arguments>
+	        <argument name="collections" xsi:type="array">
+	        	<item name="sales_order_grid_data_source" xsi:type="string">Rbncha\ArchieveOrder\Model\ResourceModel\Order\Grid\Collection</item>
+	            <item name="archieveorder_listing_data_source" xsi:type="string">Rbncha\ArchieveOrder\Model\ResourceModel\Archieve\Grid\Collection</item>
+	        </argument>
+	    </arguments>
+	</type>
+
+    
+    <virtualType name="Rbncha\ArchieveOrder\Model\ResourceModel\Archieve\Grid\Collection" type="Rbncha\ArchieveOrder\Model\ResourceModel\Archieve\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sales_order_grid</argument>
+            <argument name="resourceModel" xsi:type="string">Rbncha\ArchieveOrder\Model\ResourceModel\Archieve</argument>
+        </arguments>
+    </virtualType>
+
+</config>

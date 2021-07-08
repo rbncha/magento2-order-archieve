@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="rbncha_archieveorder" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Archieve Order</label>
+            <tab>rbncha_tab</tab>
+            <resource>Rbncha_ArchieveOrder::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Archieve Order</label>
+                <field id="archiveorder" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Archieve Order by cron</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="archiveorder_days" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Archieve orders older than days</label>
+                </field>
+                <field id="archiveorder_statuses" translate="label comment" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Order statuses to apply to</label>
+                    <source_model>Rbncha\ArchieveOrder\Model\Source\State</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <comment><![CDATA[Do not select any statuses to make all statuses archieved.]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
